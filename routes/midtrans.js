@@ -37,8 +37,8 @@ router.post('/', function(req, res) {
 router.post('/charge', function(req, res) {
    let newTransaction = {
       "transaction_details": {
-         "order_id": req.body.id,
-         "gross_amount": 10000
+         "order_id": req.body.order_id,
+         "gross_amount": parseInt(req.body.gross_amount)
      },
      "enabled_payments": ["gopay", "bca_va"],
      "gopay": {
