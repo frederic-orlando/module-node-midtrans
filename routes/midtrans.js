@@ -35,12 +35,8 @@ router.post('/', function(req, res) {
 })
 
 router.post('/charge', function(req, res) {
-   console.log(req.body)
    let newTransaction = {
-      "transaction_details": {
-         "order_id": req.body.order_id,
-         "gross_amount": parseInt(req.body.gross_amount)
-     },
+      "transaction_details": req.body.transaction_details,
      "enabled_payments": ["gopay", "bca_va"],
      "gopay": {
          "enable_callback": true,
